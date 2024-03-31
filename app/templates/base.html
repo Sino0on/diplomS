@@ -1,0 +1,64 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skirt Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 text-black" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="/" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Clothing Store</span>
+                    <img class="h-8 w-auto custom-svg" src="{% static 'imgs/logo.svg' %}" alt="Your Clothing Store Logo">
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <a href="#" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </a>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="/product/list/" class="text-sm font-semibold leading-6">Все товары</a>
+                <a href="/" class="text-sm font-semibold leading-6">Обувь</a>
+                <a href="/" class="text-sm font-semibold leading-6">Платья</a>
+                <a href="/" class="text-sm font-semibold leading-6">Корзина</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="./login.html" class="text-sm font-semibold leading-6">Log in <span
+                        aria-hidden="true">&rarr;</span></a>
+            </div>
+        </nav>
+    </header>
+
+{% block content %}
+
+{% endblock %}
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <p>&copy; 2024 Ваш бренд. Все права защищены.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Instagram</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Facebook</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Twitter</a>
+            </div>
+            <div>
+                <p>Контакт: info@yourbrand.com</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

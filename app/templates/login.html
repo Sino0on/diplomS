@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Подключение стилей Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Основной контент страницы -->
+    <div class="flex justify-center items-center h-screen">
+        <div class="bg-white p-8 rounded shadow-md w-96">
+            <h1 class="text-2xl font-semibold mb-4">Log In</h1>
+            <!-- Форма для входа -->
+            <form>
+                <!-- Поле ввода email -->
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                    <div class="mt-2">
+                        <input id="email" name="email" type="email" autocomplete="email"
+                            class="block w-full pl-2.5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none">
+                    </div>
+                </div>
+                <!-- Поле ввода пароля -->
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                    <div class="mt-2">
+                        <input type="password" id="password" name="password" autocomplete="current-password"
+                            class="block w-full pl-2.5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 outline-none">
+                    </div>
+                </div>
+                <!-- Кнопка для отправки формы -->
+                <button type="submit"
+                    class="w-full px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Log In
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

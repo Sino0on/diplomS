@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+    <main class="mx-auto max-w-7xl">
+        <section class="bg-black">
+            <img src="{% static 'imgs/bordImage.png' %}" alt="" class="bg-center bg-no-repeat bg-contain object-contain  w-full h-96">
+        </section>
+        <sectoin class="container mx-auto py-8 pt-0 pl-0 md:flex">
+            <div class="grid grid-cols-1 w-full gap-4">
+                {% for i in shops %}
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="mb-4 flex align-middle gap-4">
+                        <a href="/shop/detail/{{ i.id }}" class="flex align-middle">
+                            <img src="{{ i.image.url }}" alt="Sample Dress"
+                                class="h-24 w-24 rounded-md mb-2 h-fit">
+                            <h2 class="text-2xl font-semibold h-fit" style="margin: 35px">{{ i.shop_name }}</h2>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        {% for image in i.images.all %}
+                        <a href="/shop/detail/{{ i.id }}">
+                            <img src="{{ image.image.url }}"
+                                alt="Dress 1" class="h-52 object-cover w-full rounded-md">
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </sectoin>
+    </main>
+{% endblock %}

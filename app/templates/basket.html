@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина покупок</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 text-black" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="/index.html" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Clothing Store</span>
+                    <img class="h-8 w-auto custom-svg" src="./imgs/logo.svg" alt="Your Clothing Store Logo">
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <a href="#" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </a>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="./detail.html" class="text-sm font-semibold leading-6">Обувь</a>
+                <a href="./detail.html" class="text-sm font-semibold leading-6">Платья</a>
+                <a href="./basket.html" class="text-sm font-semibold leading-6">Корзина</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="./login.html" class="text-sm font-semibold leading-6">Log in <span
+                        aria-hidden="true">&rarr;</span></a>
+            </div>
+        </nav>
+    </header>
+    <div class="container mx-auto mt-10 flex-1">
+        <div class="flex shadow-md my-10">
+            <div class="w-3/4 bg-white px-10 py-10">
+                <div class="flex justify-between border-b pb-8">
+                    <h1 class="font-semibold text-2xl">Корзина покупок</h1>
+                    <h2 class="font-semibold text-2xl">3 Товара</h2>
+                </div>
+                <div class="flex mt-10 mb-5">
+                    <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Детали товара</h3>
+                    <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Количество</h3>
+                    <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Цена</h3>
+                    <h3 class="font-semibold text-gray-600 text-xs uppercase w-1/5 text-center">Итого</h3>
+                </div>
+
+                <!-- Пример товара 1 -->
+                <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                    <div class="flex w-2/5">
+                        <div class="w-20">
+                            <img class="h-24" src="path/to/image" alt="Изображение товара">
+                        </div>
+                        <div class="flex flex-col justify-between ml-4 flex-grow">
+                            <span class="font-bold text-sm">Название товара 1</span>
+                            <span class="text-red-500 text-xs">Бренд 1</span>
+                            <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Удалить</a>
+                        </div>
+                    </div>
+                    <div class="flex justify-center w-1/5">
+                        <input type="number" value="1"
+                            class="mx-2 border text-center w-16 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                            min="1">
+                    </div>
+                    <span class="text-center w-1/5 font-semibold text-sm">10000 руб.</span>
+                    <span class="text-center w-1/5 font-semibold text-sm">10000 руб.</span>
+                </div>
+                <!-- Конец товара 1 -->
+
+                <!-- Пример товара 2 (добавим еще для примера) -->
+                <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
+                    <div class="flex w-2/5">
+                        <div class="w-20">
+                            <img class="h-24" src="path/to/image" alt="Изображение товара 2">
+                        </div>
+                        <div class="flex flex-col justify-between ml-4 flex-grow">
+                            <span class="font-bold text-sm">Название товара 2</span>
+                            <span class="text-red-500 text-xs">Бренд 2</span>
+                            <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Удалить</a>
+                        </div>
+                    </div>
+                    <div class="flex justify-center w-1/5">
+                        <input type="number" value="1"
+                            class="mx-2 border text-center w-16 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                            min="1">
+                    </div>
+                    <span class="text-center w-1/5 font-semibold text-sm">5000 руб.</span>
+                    <span class="text-center w-1/5 font-semibold text-sm">10000 руб.</span>
+                </div>
+                <!-- Конец товара 2 -->
+
+                <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
+                    Продолжить покупки
+                </a>
+            </div>
+
+            <div id="summary" class="w-1/4 px-8 py-10">
+                <h1 class="font-semibold text-2xl border-b pb-8">Итог заказа</h1>
+                <div class="flex justify-between mt-10 mb-5">
+                    <span class="font-semibold text-sm uppercase">Товаров 3</span>
+                    <span class="font-semibold text-sm">20000 руб.</span>
+                </div>
+                <div>
+                    <label class="font-medium inline-block mb-3 text-sm uppercase">Доставка</label>
+                    <select class="block p-2 text-gray-600 w-full text-sm">
+                        <option>Стандартная доставка - 300 руб.</option>
+                        <option>Экспресс доставка - 500 руб.</option>
+                    </select>
+                </div>
+                <div class="py-10">
+                    <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Промокод</label>
+                    <input type="text" id="promo" placeholder="Введите ваш код" class="p-2 text-sm w-full">
+                </div>
+                <button class="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Применить</button>
+                <div class="border-t mt-8">
+                    <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+                        <span>Итого</span>
+                        <span>20300 руб.</span>
+                    </div>
+                    <button
+                        class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Оформить
+                        заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <p>&copy; 2024 Ваш бренд. Все права защищены.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Instagram</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Facebook</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Twitter</a>
+            </div>
+            <div>
+                <p>Контакт: info@yourbrand.com</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

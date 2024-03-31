@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="flex mx-auto max-w-7xl py-8">
+        <aside class="w-1/4 p-4 mr-4 bg-white rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Filters</h2>
+            <label for="size" class="block text-sm font-medium text-gray-700 mb-1">Size</label>
+            <select id="size" name="size"
+                class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 mb-4">
+                <option value="">All Sizes</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+            <label for="color" class="block text-sm font-medium text-gray-700 mb-1">Color</label>
+            <select id="color" name="color"
+                class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <option value="">All Colors</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </aside>
+
+        <section class="flex-1">
+            <div class="container mx-auto">
+                <div class="mb-4 flex align-middle gap-4">
+                        <a href="/shop/detail/{{ shop.id }}" class="flex align-middle">
+                            <img src="{{ shop.image.url }}" alt="Sample Dress"
+                                class="h-24 w-24 rounded-md mb-2 h-fit">
+                            <h2 class="text-2xl font-semibold h-fit" style="margin: 35px">{{ shop.shop_name }}</h2>
+                        </a>
+
+                    </div>
+                <p style="margin: 50px">{{ shop.description }}</p>
+                        <div class="grid grid-cols-4 gap-2">
+                        {% for image in shop.images.all %}
+                            <img src="{{ image.image.url }}"
+                                alt="Dress 1" class="h-52 object-cover w-full rounded-md">
+                        {% endfor %}
+                    </div>
+                <br>
+                <br>
+                <h2 class="text-2xl font-semibold mb-6">Skirt Catalog</h2>
+                <div class="grid grid-cols-3 gap-6">
+                    {% for i in products %}
+                    <a href="/product/detail/{{ i.id }}" class="bg-white rounded-lg shadow overflow-hidden">
+
+                        <img src="{{ i.images.first.images.url }}"
+                            alt="Skirt 1" class="w-full h-64 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-lg font-semibold">{{ i.title }}</h3>
+                            <p class="text-gray-600">{{ i.price.price }} сом</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
